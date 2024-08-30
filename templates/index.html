@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+    
+</head>
+<body style="background-image: url('{% static 'images/background.jpg' %}'); background-repeat: no-repeat; background-size: 100%; width:100%; height:1000px">
+<div class="box">
+    <h1 align="center" style="color: white;"><b>Library Management System</b></h1>
+    <h2 align="center" style="margin-top:170px; color: white;"><b>Login Page</b></h2>
+    <form action='' method="post">
+        {% csrf_token %}
+    <h3 style="color:white;" align="center"><u>{{ data }}</u></h3>
+    <div id="div3">
+        <table align="center" id="table1">
+            <tr>
+                <td style="color: white;"><b>UserName:</b></td>
+                <td><input name="userName" type="text" id="txtName"></td>
+            </tr>
+            <tr>
+                <td style="color: white;"><b>Password:</b></td>
+                <td><input name="userPassword" type="password" id="txtPswd"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="btnSub" value="Login">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <a href="{% url 'register' %}"><b>Admin Sign UP</b></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <a href="{% url 'addstud' %}"><b>Student Sign UP</b></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</div>
+</body>
+</html>
